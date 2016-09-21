@@ -1,0 +1,322 @@
+/*---------------------*/
+/*   1. Reset styles
+/*---------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+  }
+}
+a{ color:white; }
+
+.header-desctop-logo {
+  display: block;
+  @media screen and (max-width: 460px){
+    display: none;
+  }
+}
+
+.dsp-none-720px{
+  display: block;
+  @media screen and (max-width: 720px) {
+    display: none;
+  }
+}
+
+.dsp-none-720in {
+  display: none;
+  @media screen and (max-width: 720px) {
+    display: block;
+    padding-left: 0;
+  }
+}
+
+.basic-content {
+  margin: 35px 0 15px 0;
+}
+
+// swiper slider
+.swiper-container {
+  margin: 15px 0;
+  width: 50%;
+  height: 100%;
+      padding-bottom: 15px;
+  @media screen and (max-width: 991px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 660px) {
+    width: 95%;
+  }
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+// 
+
+.header-menu {
+  margin: 5px 0 0 5px;
+}
+
+.header-menu ul{
+  float: left;
+  list-style-type: none;
+  padding: 0;
+}
+
+.header-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+ .menu-line {
+  background: url("../image/menu-line.png");
+  height: 4px;
+}
+
+
+.header-menu li{
+    float:left;
+    position:relative;
+    display:block;
+}
+
+.header-menu li a{
+    display: block;
+    padding: 5px 15px;
+    color: #684747;
+    text-decoration: none;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+
+.header-menu li a:hover{
+  color: #7dc1e8;
+  text-decoration:underline;
+}
+
+
+.header-menu ul li{
+    padding-top:1px; /* Вводим отступ между li чтобы создать иллюзию разделенных пунктов меню */
+    float:none;
+}
+
+.header-menu li:hover ul{ /* Выводим выпадающий пункт при наведении курсора */
+    left:0; /* Приносим его обратно на экран, когда нужно */
+    opacity:1; /* Делаем непрозрачным */
+}
+
+.header-menu li:hover a{ /* Устанавливаем стили для верхнего уровня, когда выводится выпадающий список */
+ /* Выглядит полупрозрачным */
+    text-decoration:underline;
+}
+
+.header-menu li:hover ul a{ /* Изменяем некоторые стили верхнего уровня при выводе выпадающего пункта */
+    text-decoration:none;
+    -webkit-transition:-webkit-transform 0.075s linear;
+}
+
+.header-menu li:hover ul li a:hover{ 
+    text-decoration:underline;
+    -moz-transform:scale(1.05);
+    -webkit-transform:scale(1.05);
+}
+
+
+.header-menu li:hover ul{ /* Выводим выпадающий пункт при наведении курсора */
+    left:0; /* Приносим его обратно на экран, когда нужно */
+    opacity:1; /* Делаем непрозрачным */
+    z-index: 1;
+}
+
+
+.header-submenu ul {
+  position: absolute;
+  display: none;
+  background: black;
+}
+.header-submenu ul li {
+  display: inline-block;
+  position: relative;
+  float: none;
+}
+.header-submenu:hover > ul { display: block; }
+
+.header-submenu > a:after {
+  content: "";
+  background: url("../image/flag.png") no-repeat;
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  position: absolute;
+    top: 12px;
+    margin-left: 5px;
+}
+
+.header-submenu:hover > a:after{
+  content: "";
+  background: url("../image/flag.png") no-repeat;
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  transform:rotate(180deg);
+  position: absolute;
+    top: 8px;
+    margin-left: 2px;
+}
+
+.header-submenu ul {
+  padding-right: 0;
+  text-align: center;
+}
+
+.menu-desctop {
+  background: #7dc1e8;
+
+}
+
+.header-icon {
+  background: url("../image/am_icon.png") center center no-repeat;
+  height: 75px;
+  width: 200px;
+  display: block;
+  margin: 10px auto;
+  float:left;
+  @media screen and (max-width:992px) {
+    float: none;
+
+  }
+  @media screen and (max-width: 720px) {
+    float: left;
+    margin: 10px 10px;
+  }
+}
+
+.separat {
+	margin: 35px 0;
+	div{
+		border-left: 1px solid white;
+
+		a:hover{
+
+		}
+	}
+
+	div:last-child{ border-right: 1px solid white; }
+} 
+
+.header-st {
+	margin-left: 10px;
+	background-color: aliceblue;
+	border-radius: 10px;
+}
+
+.border_bottom {
+	border-bottom: 1px solid black;
+}
+
+.header-menu {
+	@media screen and (max-width: 720px){
+		margin: 32px 20px;
+		background: url("../image/car-icon.png") no-repeat center;
+		height: 32px;
+		width: 32px;
+		padding: 12px 12px;
+		/* margin-left: 0px; */
+		position: absolute;
+		top: 0;
+		/* left: 10px; */
+		position: fixed;
+		z-index: 10;
+		cursor: pointer;
+		right: 0;
+		&:hover {
+			background: url("../image/car-icon-open.png") no-repeat center;
+		}
+	}
+}
+
+@media screen and (max-width: 720px){
+	.header-submenu { float: left; }
+
+	.header-menu ul{
+		float: none;
+		display: none;
+		z-index: 2;
+		background: gray;
+		position: absolute;
+		top: 31px;
+		right: 0px;
+		width: 160px;
+		border-radius: 10px;
+		border: 1px solid black;
+	}
+}
+
+.blocks {
+	
+    text-align: right;
+}
+
+.block-after,
+.block-before {
+    width: 100%;
+	border: 3px solid #ffc107;
+	border-radius: 5px;
+	display: inline-block;
+	height: 150px;
+}
+
+.txt-after {
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  background-color: #ffc107;
+  padding: 0 10px;
+  position: absolute;
+  bottom: 0px;
+  right: 18px;
+  border-radius: 3px;
+}
